@@ -15,7 +15,7 @@ install-package SqlAsFile
 	``` 
 * Add your .sql files inside any folder os subfolder of your `Data` project.
 > The `Build Action` property of the .sql files should be changed to `Embedded Resource`.
-> Run the `SqlInfoGenerator.tt` (right click, `Run Custom Tool`)
+* Run the `SqlInfoGenerator.tt` (right click, `Run Custom Tool`)
 
 # Usage
 Now you can access the content of your .sql files in a strongly typed way directly from your C# code:
