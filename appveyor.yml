@@ -1,0 +1,30 @@
+version: 0.1.{build}
+os: Visual Studio 2017
+configuration: Release
+environment:
+  clone_folder: c:\SqlAsFile
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+  
+before_build:
+- cmd: dotnet --version
+- cmd: dotnet restore src
+
+build_script:
+# The default build
+- cmd: dotnet build src -c release
+
+after_build:
+- cmd: tools/buildNuget.cmd
+
+test_script:
+- cmd: dotnet clean src/SqlAsFile.Tests
+- cmd: dotnet test src/SqlAsFile.Tests
+
+artifacts:
+  - path: .\src\nuget\*.nupkg
+    name: NuGet package
