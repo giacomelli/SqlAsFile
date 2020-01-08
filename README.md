@@ -17,7 +17,7 @@ install-package SqlAsFile
 	``` 
 * Add your .sql files inside any folder os subfolder of your `Data` project.
 > The `Build Action` property of the .sql files should be changed to `Embedded Resource`.
-> Run the `SqlInfoGenerator.tt` (right click, `Run Custom Tool`)
+* Run the `SqlInfoGenerator.tt` (right click, `Run Custom Tool`)
 
 # Usage
 Now you can access the content of your .sql files in a strongly typed way directly from your C# code:
@@ -31,7 +31,7 @@ var sql = SampleData.Data.SampleNamespace1.SampleSubNamespace1.Sql.SampleSql2
 You can use some tags to tell to SqlAsFile's parser how to treat a portion of the file:
 
 ### test-args
-Anything inside of these tags will be strip of the SQL that you can access on C#.
+Anything inside of these tags will be strip off of the SQL that you can access on C#.
 > This tag is useful when you want to test the .sql directly against the DB without need to define the arguments every time.
 
 ```sql
