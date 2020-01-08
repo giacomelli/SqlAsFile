@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Stubs\SampleNamespace1\SampleSql1.sql" />
+    <None Remove="Stubs\SampleNamespace1\SampleSubNamespace1\SampleSql2.sql" />
+    <None Remove="Stubs\SampleNamespace2\SampleSql1.sql" />
+    <None Remove="Stubs\SampleNamespace2\SampleSql3.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Stubs\SampleNamespace1\SampleSql1.sql" />
+    <EmbeddedResource Include="Stubs\SampleNamespace1\SampleSubNamespace1\SampleSql2.sql" />
+    <EmbeddedResource Include="Stubs\SampleNamespace2\SampleSql1.sql" />
+    <EmbeddedResource Include="Stubs\SampleNamespace2\SampleSql3.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SqlAsFile\SqlAsFile.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>

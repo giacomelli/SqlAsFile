@@ -35,11 +35,11 @@ namespace SqlAsFile
                 }
                 catch(InvalidOperationException ex)
                 {
-                    throw new InvalidOperationException($"Existe mais de um arquivo '{file.RelativeFilePath}' no assembly '{assembly.GetName().Name}'. Utilize o nome da pasta ao instanciar o SqlFile para especificar o arquivo desejado.", ex);
+                    throw new InvalidOperationException($"There is more than a file '{file.RelativeFilePath}' on assembly '{assembly.GetName().Name}'. Use the folder path when instancianting a SQL file to specify the right file.", ex);
                 }
 
                 if (resourceName == null)
-                    throw new InvalidOperationException($"Não foi possível localizar um arquivo SQL no caminho '{file.RelativeFilePath}' ({key}).");                
+                    throw new InvalidOperationException($"Could not find a file on location '{file.RelativeFilePath}'.");                
 
                 using (var stream = assembly.GetManifestResourceStream(resourceName))
                 using (var reader = new StreamReader(stream))
