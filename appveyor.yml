@@ -13,7 +13,7 @@ build_script:
 - cmd: dotnet build src -c release
 
 after_build:
-- cmd: tools/buildNuget.cmd
+- cmd: buildNuget.cmd
 
 test_script:
 - cmd: dotnet clean src/SqlAsFile.Tests
