@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SampleNamespace1\SampleSql1.sql" />
+    <None Remove="SampleNamespace1\SampleSubNamespace1\SampleSql2.sql" />
+    <None Remove="SampleNamespace2\SampleSql3.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SampleNamespace1\SampleSql1.sql" />
+    <EmbeddedResource Include="SampleNamespace1\SampleSubNamespace1\SampleSql2.sql" />
+    <EmbeddedResource Include="SampleNamespace2\SampleSql3.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SqlAsFile\SqlAsFile.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="SqlInfoGenerator.cs">
+      <DependentUpon>SqlInfoGenerator.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SqlInfoGenerator.tt">
+      <LastGenOutput>SqlInfoGenerator.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
