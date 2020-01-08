@@ -16,8 +16,8 @@ namespace SqlAsFile.Tests
         {
             var actual = new FileSqlInfo(relativeFilePath);
             Assert.AreEqual(GetType().Assembly, actual.Assembly);
-            Assert.AreEqual($"--<cte>{Environment.NewLine}{cte}{Environment.NewLine}--</cte>", actual.Cte);
-            Assert.AreEqual($"{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{content}", actual.Content);            
+            AssertHelper.Cte(cte, actual.Cte);
+            AssertHelper.Content(content, actual.Content);
         }
     }
 }
