@@ -8,7 +8,7 @@ Use your SQL in .sql files instead of strings in C#
 ```shell
 install-package SqlAsFile
 ```
-* Copy the `SqlInfoGenerator.tt` to your `Data` project.
+* Copy the [SqlInfoGenerator.tt](https://github.com/giacomelli/SqlAsFile/blob/master/src/Sample.Data/SqlInfoGenerator.tt) to your `Data` project.
 	* Change the namespace of line bellow to the namespace of your `Data` project.
 	```csharp
 		var projectNamespace = "Sample.Data";
