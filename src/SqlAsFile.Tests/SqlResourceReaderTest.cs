@@ -20,7 +20,7 @@ namespace SqlAsFile.Tests
             try
             {
                 var actual = SqlResourceReader.Read(new FileSqlInfo(relativeFilePath));
-                Assert.AreEqual($"--<test-args>\r\nDECLARE @test INT = 2;\r\n--</test-args>\r\n\r\n--<cte>\r\n{cte}\r\n--</cte>\r\n\r\n{content}", actual);
+                Assert.AreEqual($"--<test-args>{Environment.NewLine}DECLARE @test INT = 2;{Environment.NewLine}--</test-args>{Environment.NewLine}{Environment.NewLine}--<cte>{Environment.NewLine}{cte}{Environment.NewLine}--</cte>{Environment.NewLine}{Environment.NewLine}{content}", actual);
                 Assert.IsNull(exception);
             }
             catch (Exception ex)

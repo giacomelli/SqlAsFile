@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace SqlAsFile.Tests
 {
@@ -15,8 +16,8 @@ namespace SqlAsFile.Tests
         {
             var actual = new FileSqlInfo(relativeFilePath);
             Assert.AreEqual(GetType().Assembly, actual.Assembly);
-            Assert.AreEqual($"--<cte>\r\n{cte}\r\n--</cte>", actual.Cte);
-            Assert.AreEqual($"\r\n\r\n\r\n\r\n{content}", actual.Content);            
+            Assert.AreEqual($"--<cte>{Environment.NewLine}{cte}{Environment.NewLine}--</cte>", actual.Cte);
+            Assert.AreEqual($"{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}{content}", actual.Content);            
         }
     }
 }
