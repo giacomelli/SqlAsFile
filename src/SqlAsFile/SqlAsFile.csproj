@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -8,4 +8,17 @@
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
+  <!-- NuGet Package -->
+  <PropertyGroup>
+    <PackageId>SqlAsFile</PackageId>
+    <PackageDescription>Use your SQL in .sql files instead of strings in C#.</PackageDescription>
+    <Authors>Diego Giacomelli</Authors>
+    <Owners>g1acomell1</Owners>
+    <PackageLicenseUrl>https://github.com/giacomelli/SqlAsFile/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/giacomelli/SqlAsFile</PackageProjectUrl>
+    <PackageReleaseNotes>See changes at https://github.com/giacomelli/SqlAsFile.</PackageReleaseNotes>
+    <PackageTags>sql t4 code-generation</PackageTags>
+  </PropertyGroup>
+  <!-- NuGet Package -->
+  
 </Project>
