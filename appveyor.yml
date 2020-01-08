@@ -20,5 +20,5 @@ test_script:
 - cmd: dotnet test src/SqlAsFile.Tests
 
 artifacts:
-  - path: **/SqlAsFile.nupkg
+  - path: '**\SqlAsFile.nupkg'
     name: NuGet package
