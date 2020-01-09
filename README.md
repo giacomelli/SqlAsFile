@@ -1,4 +1,8 @@
 # SqlAsFile
+[![Build status](https://ci.appveyor.com/api/projects/status/2ua9ok73475uoxrs?svg=true)](https://ci.appveyor.com/project/giacomelli/sqlasfile)
+[![License](http://img.shields.io/:license-MIT-blue.svg)](https://raw.githubusercontent.com/giacomelli/SqlAsFile/master/LICENSE)
+[![Nuget](https://img.shields.io/nuget/v/SqlAsFile.svg)](https://www.nuget.org/packages/SqlAsFile/)
+
 Use your SQL in .sql files instead of strings in C#
 
 ![](docs/images/SqlAsFile-sample.gif)
