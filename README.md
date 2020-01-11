@@ -27,7 +27,8 @@ install-package SqlAsFile
 Now you can access the content of your .sql files in a strongly typed way directly from your C# code:
 
 ```
-// Using the SQL inside of the file SampleSql2.sql on the folder  SampleData\Data\SampleNamespace1\SampleSubNamespace1.
+// Using the SQL inside of the file SampleSql2.sql on the folder 
+// SampleData\Data\SampleNamespace1\SampleSubNamespace1.
 var sql = SampleData.Data.SampleNamespace1.SampleSubNamespace1.Sql.SampleSql2
 ``` 
 
